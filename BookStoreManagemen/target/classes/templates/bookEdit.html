@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+<title>Book Store Management</title>
+</head>
+<body style="background-color: DarkGreen">
+	<center>
+		<h1>Book Store Management</h1>
+	</center>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand text-white" href="#">Ankesh Book Store</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+					<li class="nav-item"><a class="nav-link active text-white"
+						aria-current="page" href="/">Home</a></li>
+
+					<li class="nav-item"><a class="nav-link text-white" href="/avilabe_book">Available
+							Books</a></li>
+
+					<li class="nav-item"><a class="nav-link text-white" href="my_books">My
+							Books</a></li>
+
+				</ul>
+
+				<div>
+					<a class="nav-link active text-white" aria-current="page"
+						href="book_register">New Book Register</a>
+				</div>
+
+				<div>
+					<a class="nav-link active text-white" aria-current="page" href="contact_us">Contact
+						Us</a>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+
+	<div class="nav-link active text-dark text-center my-5">
+		<h1>WELCOME TO ANKESH BOOK STORE</h1>
+
+
+		<h6>A bookstore is a retail establishment that primarily sells
+			books and other reading materials. It is a place where individuals
+			can browse through a wide selection of books and make purchases based
+			on their interests and preferences. Bookstores can be independent,
+			privately-owned shops, or part of larger chains. Here are some key
+			aspects of a typical bookstore: Book Selection: Bookstores offer a
+			diverse range of books across various genres and categories. They
+			often have sections dedicated to fiction, non-fiction, biographies,
+			self-help, children's books, textbooks, reference books, and more.
+			Some bookstores specialize in specific genres or cater to niche
+			interests. Physical Space: Bookstores typically provide a comfortable
+			and inviting environment for customers. They have shelves and display
+			tables to showcase books, creating an atmosphere that encourages
+			browsing and discovery. Many bookstores also have cozy reading areas
+			or cafes where visitors can relax and enjoy their books. Staff
+			Assistance: Bookstore staff members are knowledgeable about books and
+			can provide recommendations or help customers locate specific titles
+			or authors. They may offer insights, suggestions, and engage in
+			conversations about books to enhance the customer's experience. Book
+			Events and Community Engagement: Bookstores often host author
+			signings, book readings, literary discussions, and other events that
+			promote interaction between authors, readers, and the local
+			community.</h6>
+
+		<img src="/images/pg4.jpeg" width="240px" /> <img
+			src="/images/pg3.jpeg" width="240px" /> <img src="/images/pg5.jpeg"
+			width="240px" />
+
+
+	</div>
+
+	<div class="Container my-5 p-2">
+	  <center><h4>Edit Book Here!</h4></center> 
+		<form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" th:object="${book}">
+		
+		<input type="hidden" name="id" th:value="${book.id}"/>
+		
+			<div class="mb-3">
+				<label for="name" class="form-label">Name
+					   </label> <input type="text" class="form-control" name="name" th:value="${book.name}">
+			</div>
+			
+				<div class="mb-3">
+				<label for="author" class="form-label">Author
+					   </label> <input type="text" class="form-control" name="author" th:value="${book.author}">
+			</div>
+			
+				<div class="mb-3">
+				<label for="price" class="form-label">Price
+					   </label> <input type="text" class="form-control" name="price" th:value="${book.price}">
+			</div>
+			
+			 <center><button type="submit" class="btn btn-primary">Submit</button></center>
+		</form>
+	</div>
+
+</body>
+</html>
